@@ -5,6 +5,7 @@ import 'package:app_foodtrunck/utils/app_routes.dart';
 import 'package:app_foodtrunck/views/pedido_view.dart';
 import 'package:app_foodtrunck/views/fechar_pedido_view.dart';
 import 'package:app_foodtrunck/views/produto_detale_view.dart';
+import 'package:app_foodtrunck/views/produtos_view.dart';
 import 'package:flutter/material.dart';
 import 'package:app_foodtrunck/views/produtos_geral_view.dart';
 import 'package:provider/provider.dart';
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
             onError: const Color.fromARGB(255, 143, 24, 0),
             background: const Color.fromARGB(255, 60, 46, 33),
             onBackground: const Color.fromARGB(255, 60, 46, 33),
-            surface: const Color.fromARGB(255, 241, 188, 157),
+            surface: Color.fromARGB(255, 94, 72, 60),
             onSurface: Colors.white,
           ),
 
@@ -63,6 +64,7 @@ class MyApp extends StatelessWidget {
           AppRoutes.PEDIDO: (context) => const PedidoView(),
           AppRoutes.HOME: (context) => ProdutosGeralView(),
           AppRoutes.FECHAR_PEDIDO: (context) => const FecharPedidoView(),
+          AppRoutes.PRODUTOS: (context) => const ProdutosView(),
         },
       ),
     );

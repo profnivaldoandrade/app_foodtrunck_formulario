@@ -1,4 +1,4 @@
-import 'package:app_foodtrunck/components/item_produto.dart';
+import 'package:app_foodtrunck/components/item_grid_produto.dart';
 import 'package:app_foodtrunck/models/lista_produtos.dart';
 import 'package:app_foodtrunck/models/produto.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +25,7 @@ class GridProduto extends StatelessWidget {
       ),
       itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
         value: carregarProdutos[i],
-        child: ItemProduto(),
+        child: ItemGridProduto(),
       ),
     );
   }

@@ -17,7 +17,7 @@ class Pedido with ChangeNotifier {
 
   double get totalItens {
     double total = 0.0;
-    _items.forEach((key, itemCarrinho) { 
+    _items.forEach((key, itemCarrinho) {
       total += itemCarrinho.preco * itemCarrinho.qtd;
     });
     return total;
@@ -52,6 +52,27 @@ class Pedido with ChangeNotifier {
 
   void removerItem(String produtoId) {
     _items.remove(produtoId);
+    notifyListeners();
+  }
+
+  void removerUnicoItem(String produtoId) {
+    if (!_items.containsKey(produtoId)) {
+      return;
+    }
+    if (_items[produtoId]?.qtd == 1) {
+      _items.remove(produtoId);
+    } else {
+      _items.update(
+        produtoId,
+        (itemExistente) => ItemPedido(
+          id: itemExistente.id,
+          produtoId: itemExistente.produtoId,
+          name: itemExistente.name,
+          qtd: itemExistente.qtd - 1,
+          preco: itemExistente.preco,
+        ),
+      );
+    }
     notifyListeners();
   }
 

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 // ignore: use_key_in_widget_constructors
-class ItemProduto extends StatelessWidget {
+class ItemGridProduto extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final produto = Provider.of<Produto>(context, listen: false);
@@ -32,6 +32,20 @@ class ItemProduto extends StatelessWidget {
           trailing: IconButton(
             onPressed: () {
               pedido.addItem(produto);
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: const Text('Produto adicionado com sucesso!'),
+                  backgroundColor: const Color.fromARGB(255, 196, 101, 37),
+                  duration: const Duration(seconds: 2),
+                  action: SnackBarAction(
+                    label: 'DESFAZER',
+                    textColor: const Color.fromARGB(255, 31, 235, 218),
+                    onPressed: () {
+                      pedido.removerUnicoItem(produto.id);
+                    },
+                  ),
+                ),
+              );
             },
             icon: const Icon(Icons.list_alt),
             color: Theme.of(context).colorScheme.primary,
