@@ -4,8 +4,9 @@ final produtosFicticio = [
   Produto(
     id: 'p1',
     titulo: 'Salada',
-    descricao: 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI',
-    ingridientes: [
+    descricao:
+        'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI',
+    ingredientes: [
       '4 Tomatoes',
       '1 Tablespoon of Olive Oil',
       '1 Onion',
@@ -23,7 +24,7 @@ final produtosFicticio = [
     descricao:
         'Frango Empanado 160g - molho tradicional - Cebola Roxa - Tomate',
     preco: 59.99,
-    ingridientes: [
+    ingredientes: [
       '4 Tomatoes',
       '1 Tablespoon of Olive Oil',
       '1 Onion',
@@ -38,7 +39,7 @@ final produtosFicticio = [
     id: 'p3',
     titulo: 'Tradicional',
     descricao: 'Burguer 160g - molho tradicional - Cheeder',
-    ingridientes: [
+    ingredientes: [
       '4 Tomatoes',
       '1 Tablespoon of Olive Oil',
       '1 Onion',
@@ -54,7 +55,7 @@ final produtosFicticio = [
     id: 'p4',
     titulo: 'Egg',
     descricao: 'Burguer 160g - molho tradicional - Cheeder - Ovo',
-    ingridientes: [
+    ingredientes: [
       '4 Tomatoes',
       '1 Tablespoon of Olive Oil',
       '1 Onion',

@@ -37,7 +37,7 @@ class ProdutoDetalheView extends StatelessWidget {
               Container(
                 margin: const EdgeInsets.symmetric(vertical: 10),
                 child: Text(
-                  'Ingridientes',
+                  'Ingredientes',
                   style: Theme.of(context).textTheme.bodySmall,
                 ),
               ),
@@ -51,7 +51,7 @@ class ProdutoDetalheView extends StatelessWidget {
                     border: Border.all(color: Colors.grey),
                     borderRadius: BorderRadius.circular(10)),
                 child: ListView.builder(
-                    itemCount: produto.ingridientes.length,
+                    itemCount: produto.ingredientes.length,
                     itemBuilder: (cxt, i) {
                       return Card(
                         color: Theme.of(context).colorScheme.surface,
@@ -61,7 +61,7 @@ class ProdutoDetalheView extends StatelessWidget {
                             horizontal: 10,
                           ),
                           child: Text(
-                            produto.ingridientes[i],
+                            produto.ingredientes[i],
                             style: Theme.of(context).textTheme.bodySmall,
                           ),
                         ),

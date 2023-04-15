@@ -5,7 +5,7 @@ import 'package:app_foodtrunck/utils/app_routes.dart';
 import 'package:app_foodtrunck/views/form_produto_view.dart';
 import 'package:app_foodtrunck/views/pedido_view.dart';
 import 'package:app_foodtrunck/views/fechar_pedido_view.dart';
-import 'package:app_foodtrunck/views/produto_detale_view.dart';
+import 'package:app_foodtrunck/views/produto_detalhe_view.dart';
 import 'package:app_foodtrunck/views/produtos_view.dart';
 import 'package:flutter/material.dart';
 import 'package:app_foodtrunck/views/produtos_geral_view.dart';
