@@ -1,5 +1,8 @@
+import 'package:app_foodtrunck/models/lista_produtos.dart';
 import 'package:app_foodtrunck/models/produto.dart';
+import 'package:app_foodtrunck/utils/app_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ItemProduto extends StatelessWidget {
   final Produto produto;
@@ -24,12 +27,43 @@ class ItemProduto extends StatelessWidget {
         child: Row(
           children: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(
+                  AppRoutes.PRODUTO_FORM,
+                  arguments: produto,
+                );
+              },
               icon: const Icon(Icons.edit),
               color: Theme.of(context).colorScheme.primary,
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                showDialog<bool>(
+                  context: context,
+                  builder: (ctx) => AlertDialog(
+                    title: const Text('Excluir Produto'),
+                    content:
+                        const Text('Deseja Realmente Excluir esse Produto?'),
+                    actions: [
+                      TextButton(
+                        onPressed: () => Navigator.of(context).pop(false),
+                        child: const Text('Não'),
+                      ),
+                      TextButton(
+                        onPressed: () => Navigator.of(context).pop(true),
+                        child: const Text('Sim'),
+                      ),
+                    ],
+                  ),
+                ).then((value) {
+                  if (value ?? false) {
+                    Provider.of<ListaProdutos>(
+                      context,
+                      listen: false,
+                    ).removerProduto(produto);
+                  }
+                });
+              },
               icon: const Icon(Icons.delete),
               color: Theme.of(context).colorScheme.secondary,
             ),
