@@ -2,6 +2,7 @@ import 'package:app_foodtrunck/models/pedido.dart';
 import 'package:app_foodtrunck/models/fechar_pedidos_itens.dart';
 import 'package:app_foodtrunck/models/lista_produtos.dart';
 import 'package:app_foodtrunck/utils/app_routes.dart';
+import 'package:app_foodtrunck/views/form_produto_view.dart';
 import 'package:app_foodtrunck/views/pedido_view.dart';
 import 'package:app_foodtrunck/views/fechar_pedido_view.dart';
 import 'package:app_foodtrunck/views/produto_detale_view.dart';
@@ -32,15 +33,15 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme(
             brightness: Brightness.light,
             primary: const Color.fromARGB(255, 223, 86, 5),
-            onPrimary: const Color.fromARGB(255, 255, 255, 255),
+            onPrimary: const Color.fromARGB(255, 242, 245, 242),
             secondary: const Color.fromARGB(255, 143, 24, 0),
             onSecondary: const Color.fromARGB(255, 70, 186, 105),
             error: Colors.white,
             onError: const Color.fromARGB(255, 143, 24, 0),
             background: const Color.fromARGB(255, 60, 46, 33),
             onBackground: const Color.fromARGB(255, 60, 46, 33),
-            surface: Color.fromARGB(255, 94, 72, 60),
-            onSurface: Colors.white,
+            surface: const Color.fromARGB(255, 94, 72, 60),
+            onSurface: const Color.fromARGB(255, 0, 0, 0),
           ),
 
           // Define the default font family.
@@ -52,6 +53,10 @@ class MyApp extends StatelessWidget {
             displayLarge:
                 TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
             titleLarge: TextStyle(fontSize: 24, fontFamily: 'Lato-Bold'),
+            bodyLarge: TextStyle(
+                fontSize: 15,
+                fontFamily: 'Lato',
+                color: Color.fromARGB(255, 184, 5, 5)),
             bodyMedium: TextStyle(
                 fontSize: 20, fontFamily: 'Lato', color: Colors.white),
             bodySmall: TextStyle(
@@ -65,6 +70,7 @@ class MyApp extends StatelessWidget {
           AppRoutes.HOME: (context) => ProdutosGeralView(),
           AppRoutes.FECHAR_PEDIDO: (context) => const FecharPedidoView(),
           AppRoutes.PRODUTOS: (context) => const ProdutosView(),
+          AppRoutes.PRODUTO_FORM: (context) => const FormProdutoView(),
         },
       ),
     );

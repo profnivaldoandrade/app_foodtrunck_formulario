@@ -13,6 +13,10 @@ class ListaProdutos with ChangeNotifier {
     _items.add(produto);
     notifyListeners();
   }
+
+  int get quantosItens {
+    return _items.length;
+  }
 }
   // bool _mostraApenasFavoritos = false;
 

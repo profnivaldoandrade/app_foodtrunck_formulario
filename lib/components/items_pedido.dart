@@ -30,6 +30,29 @@ class ItemPedidoWidget extends StatelessWidget {
           size: 40,
         ),
       ),
+      confirmDismiss: (_) {
+        return showDialog<bool>(
+          context: context,
+          builder: (ctx) => AlertDialog(
+            title: const Text('Tem Certez?'),
+            content: const Text('Quer remover o item do pedido?'),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop(false);
+                },
+                child: const Text('Não'),
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop(true);
+                },
+                child: const Text('Sim'),
+              ),
+            ],
+          ),
+        );
+      },
       onDismissed: (_) {
         Provider.of<Pedido>(
           context,
@@ -52,8 +75,7 @@ class ItemPedidoWidget extends StatelessWidget {
               ),
             ),
             title: Text(itemPedido.name),
-            subtitle:
-                Text('Total: R\$ ${itemPedido.preco * itemPedido.qtd}'),
+            subtitle: Text('Total: R\$ ${itemPedido.preco * itemPedido.qtd}'),
             trailing: Text(
               '${itemPedido.qtd}x',
               style: const TextStyle(color: Colors.black),
