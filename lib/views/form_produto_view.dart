@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:app_foodtrunck/models/lista_produtos.dart';
 import 'package:app_foodtrunck/models/produto.dart';
 import 'package:flutter/material.dart';
@@ -153,6 +151,7 @@ class _FormProdutoViewState extends State<FormProdutoView> {
                   if (precoValido <= 0) {
                     return 'Informe um preço válido';
                   }
+                  return null;
                 },
               ),
               TextFormField(
